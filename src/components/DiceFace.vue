@@ -1,7 +1,11 @@
-<script lang="ts" setup>
-import { ref } from 'vue'
+<template>
+    <div class="relative flex justify-center items-center rounded-lg">
+        <div v-for="dot in diceDots[diceValue]" :key="dot" class="rounded-full" :class="dotPositions[dot]"></div>
+    </div>
+</template>
 
-const diceValue = ref(2) // You can update this dynamically
+<script lang="ts" setup>
+defineProps<{ diceValue: number }>()
 
 // Map dice value to dots positions
 const diceDots: Record<number, string[]> = {
@@ -24,9 +28,3 @@ const dotPositions: Record<string, string> = {
     'center': 'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'
 }
 </script>
-
-<template>
-    <div class="relative flex justify-center items-center rounded-lg">
-        <div v-for="dot in diceDots[diceValue]" :key="dot" class="rounded-full" :class="dotPositions[dot]"></div>
-    </div>
-</template>

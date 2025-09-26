@@ -85,8 +85,7 @@ import Box from "./Box.vue";
 
 defineProps<{
     character: Character;
-    statusEffect: string[];
 }>();
 
-
+const statusEffect = ["Shield", "Poison", "Burn", "Stun"];
 </script>
