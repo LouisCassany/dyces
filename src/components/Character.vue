@@ -1,13 +1,13 @@
 <template>
-    <div class="flex w-full gap-8 mb-4">
-        <div class="aspect-square self-stretch w-1/3">
+    <div class="flex w-full gap-8">
+        <div class="w-[7cm]">
             <img :src="`/${character.name}.png`" class="h-full w-full object-cover rounded-lg border-2 shadow-lg"
                 :style="{
                     borderColor: character.color,
                     boxShadow: `0 0 10px ${character.color}`
                 }" />
         </div>
-        <div class="w-full flex flex-col gap-3">
+        <div class="flex flex-col gap-3">
             <div>
                 <div class="text-[1.5cm] font-bold" :style="{ color: character.color }">
                     {{ character.name }}
@@ -16,11 +16,13 @@
                     {{ character.flavor }}
                 </div>
             </div>
-            <div class="border h-full flex flex-col p-2 gap-2 rounded-lg">
+            <div class="h-full flex flex-col p-2 gap-2 rounded-lg" :style="{
+                borderColor: character.color,
+            }">
                 <div class="text-lg" :style="{ color: character.color }">
                     Status effects:
                 </div>
-                <div class="w-full h-full grid grid-cols-2 grid-rows-2 gap-2">
+                <div class="w-full h-full grid grid-cols-3 grid-rows-2 gap-2">
                     <div v-for="s in statusEffect" class="flex items-center gap-2" :key="s">
                         <Box />
                         <div :style="{ color: character.color }">
@@ -32,7 +34,7 @@
         </div>
     </div>
 
-    <div class="grid grid-cols-[repeat(15,_1fr)] gap-1">
+    <div class="grid grid-cols-[repeat(15,_1fr)] gap-1 mt-8">
         <Box v-for="i in 30" :key="i"
             :class="{ 'bg-red-200': i !== character.health, 'bg-red-500': i === character.health }">
             {{ i }}
@@ -43,14 +45,18 @@
         </Box>
         <div class="rounded-lg p-2 border-2 font-bold font-mono flex items-center justify-center" :style="{
             borderColor: character.color,
-            color: character.color,
             gridColumn: `span ${15 - character.maxCp}`
         }">
             {{ character.defense }}
         </div>
     </div>
 
-    <div class="flex w-full h-full gap-2 mt-4">
+    <div class="text-lg font-bold my-4 text-center">
+        {{ character.passive }}
+    </div>
+
+    <div class="flex w-full h-full gap-2">
+
         <div class="w-7/12 flex flex-col h-full gap-2">
             <div v-for="ability in character.abilities" :key="ability.name" class="rounded-lg p-2 flex flex-col gap-2"
                 :style="{ backgroundColor: character.color, color: 'white' }">
@@ -65,7 +71,7 @@
                             </Dice>
                         </div>
                     </div>
-                    <div>
+                    <div class="text-right">
                         {{ level.effect }}
                     </div>
                 </div>
@@ -73,10 +79,6 @@
         </div>
 
         <div class="w-5/12 flex flex-col h-full gap-2">
-            <div class="rounded-lg p-2 border-2" :style="{ borderColor: character.color, color: character.color }">
-                {{ character.passive }}
-            </div>
-
             <div v-for="skill in character.cpEffects" :key="skill.name" class="rounded-lg p-2 flex flex-col gap-2"
                 :style="{ backgroundColor: character.color, color: 'white' }">
                 <div class="flex justify-between w-full">
@@ -94,7 +96,26 @@
                         {{ skill.cost }}
                     </div>
                 </div>
-
+            </div>
+            <div class="text-sm flex flex-col h-full justify-between p-2">
+                <div>
+                    - Stun: roll one less die for the current turn.
+                </div>
+                <div>
+                    - Blind: can't use skills for the current turn.
+                </div>
+                <div>
+                    - Poison: skill cost one more CP.
+                </div>
+                <div>
+                    - Burn: inflict 2 dmg at the start of the turn.
+                </div>
+                <div>
+                    - Evasive: ignore next status effect.
+                </div>
+                <div>
+                    - Shield: ignore X damage.
+                </div>
             </div>
         </div>
     </div>
@@ -110,5 +131,5 @@ defineProps<{
     character: Character;
 }>();
 
-const statusEffect = ["Shield", "Poison", "Burn", "Stun"];
+const statusEffect = ["Shield", "Poison", "Burn", "Stun", "Blind", "Evasive"];
 </script>

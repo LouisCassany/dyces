@@ -42,8 +42,8 @@ export const characters: Character[] = [
             {
                 name: "Raging Specials",
                 levels: [
-                    { requirement: [[3, "1-3"], [1, "6"]], effect: "Deal 10 dmg" },
-                    { requirement: [[4, "1-3"], [1, "6"]], effect: "Deal 14 dmg + Stun" },
+                    { requirement: [[2, "1-3"], [1, "6"]], effect: "Deal 10 dmg" },
+                    { requirement: [[3, "1-3"], [1, "6"]], effect: "Deal 14 dmg + Stun" },
                 ],
             },
             {
@@ -51,7 +51,7 @@ export const characters: Character[] = [
                 levels: [
                     { requirement: [[2, "4-5"]], effect: "Gain 2 CP" },
                     { requirement: [[3, "4-5"]], effect: "Heal 3 HP" },
-                    { requirement: [[5, "4-5"]], effect: "Heal 6 HP and +2 dmg next attack" },
+                    { requirement: [[4, "4-5"]], effect: "Heal 6 HP and +2 dmg next attack" },
                 ],
             },
         ],
@@ -76,16 +76,16 @@ export const characters: Character[] = [
             {
                 name: "Divine Strikes",
                 levels: [
-                    { requirement: [[3, "1-3"]], effect: "Deal 4 dmg" },
-                    { requirement: [[4, "1-3"]], effect: "Deal 7 dmg" },
-                    { requirement: [[5, "1-3"]], effect: "Deal 11 dmg + Ignore 1 Shield" },
+                    { requirement: [[2, "1-3"]], effect: "Deal 4 dmg" },
+                    { requirement: [[3, "1-3"]], effect: "Deal 7 dmg" },
+                    { requirement: [[4, "1-3"]], effect: "Deal 11 dmg + Ignore 1 Shield" },
                 ],
             },
             {
                 name: "Holy Specials",
                 levels: [
-                    { requirement: [[3, "1-3"], [1, "6"]], effect: "Deal 6 dmg + gain 1 Shield" },
-                    { requirement: [[4, "1-3"], [1, "6"]], effect: "Deal 9 dmg + Stun" },
+                    { requirement: [[2, "1-3"], [1, "6"]], effect: "Deal 6 dmg + gain 1 Shield" },
+                    { requirement: [[3, "1-3"], [1, "6"]], effect: "Deal 9 dmg + Stun" },
                 ],
             },
             {
@@ -93,7 +93,7 @@ export const characters: Character[] = [
                 levels: [
                     { requirement: [[2, "4-5"]], effect: "Heal 2 HP" },
                     { requirement: [[3, "4-5"]], effect: "Heal 3 HP + gain 1 Shield" },
-                    { requirement: [[5, "4-5"]], effect: "Heal 6 HP + remove 1 negative effect" },
+                    { requirement: [[4, "4-5"]], effect: "Heal 6 HP + remove 1 negative effect" },
                 ],
             },
         ],
@@ -118,16 +118,16 @@ export const characters: Character[] = [
             {
                 name: "Arcane Strikes",
                 levels: [
-                    { requirement: [[3, "1-3"]], effect: "Deal 4 dmg" },
-                    { requirement: [[4, "1-3"]], effect: "Deal 7 dmg" },
-                    { requirement: [[5, "1-3"]], effect: "Deal 11 dmg + Burn" },
+                    { requirement: [[2, "1-3"]], effect: "Deal 4 dmg" },
+                    { requirement: [[3, "1-3"]], effect: "Deal 7 dmg" },
+                    { requirement: [[4, "1-3"]], effect: "Deal 11 dmg + Burn" },
                 ],
             },
             {
                 name: "Empowered Specials",
                 levels: [
-                    { requirement: [[3, "1-3"], [1, "6"]], effect: "Deal 6 dmg + Burn" },
-                    { requirement: [[4, "1-3"], [1, "6"]], effect: "Deal 9 dmg + Stun" },
+                    { requirement: [[2, "1-3"], [1, "6"]], effect: "Deal 6 dmg + Burn" },
+                    { requirement: [[3, "1-3"], [1, "6"]], effect: "Deal 9 dmg + Blind" },
                 ],
             },
             {
@@ -135,7 +135,7 @@ export const characters: Character[] = [
                 levels: [
                     { requirement: [[2, "4-5"]], effect: "Gain 2 CP" },
                     { requirement: [[3, "4-5"]], effect: "Block 3 dmg" },
-                    { requirement: [[5, "4-5"]], effect: "Heal 6 HP + Gain 2 CP" },
+                    { requirement: [[4, "4-5"]], effect: "Heal 6 HP + Gain 2 CP" },
                 ],
             },
         ],
@@ -160,16 +160,16 @@ export const characters: Character[] = [
             {
                 name: "Dark Strikes",
                 levels: [
-                    { requirement: [[3, "1-3"]], effect: "Deal 4 dmg + heal 2 HP" },
-                    { requirement: [[4, "1-3"]], effect: "Deal 7 dmg + Poison" },
-                    { requirement: [[5, "1-3"]], effect: "Deal 12 dmg + Poison" },
+                    { requirement: [[2, "1-3"]], effect: "Deal 4 dmg + heal 2 HP" },
+                    { requirement: [[3, "1-3"]], effect: "Deal 7 dmg + Poison" },
+                    { requirement: [[4, "1-3"]], effect: "Deal 12 dmg + Poison" },
                 ],
             },
             {
                 name: "Necrotic Specials",
                 levels: [
-                    { requirement: [[3, "1-3"], [1, "6"]], effect: "Gain 1 Shield + deal 3 dmg" },
-                    { requirement: [[4, "1-3"], [1, "6"]], effect: "Deal 9 dmg + heal 3 HP" },
+                    { requirement: [[2, "1-3"], [1, "6"]], effect: "Gain 1 Shield + deal 3 dmg" },
+                    { requirement: [[3, "1-3"], [1, "6"]], effect: "Deal 9 dmg + heal 3 HP" },
                 ],
             },
             {
@@ -177,7 +177,7 @@ export const characters: Character[] = [
                 levels: [
                     { requirement: [[2, "4-5"]], effect: "Heal 2 HP" },
                     { requirement: [[3, "4-5"]], effect: "Heal 3 HP + gain 1 Shield" },
-                    { requirement: [[5, "4-5"]], effect: "Heal 6 HP + revive 2 Shields" },
+                    { requirement: [[4, "4-5"]], effect: "Heal 6 HP + revive 2 Shields" },
                 ],
             },
         ],
@@ -202,16 +202,16 @@ export const characters: Character[] = [
             {
                 name: "Precision Strikes",
                 levels: [
-                    { requirement: [[3, "1-3"]], effect: "Deal 4 dmg" },
-                    { requirement: [[4, "1-3"]], effect: "Deal 7 dmg" },
-                    { requirement: [[5, "1-3"]], effect: "Deal 11 dmg + Ignore 1 Shield" },
+                    { requirement: [[2, "1-3"]], effect: "Deal 4 dmg" },
+                    { requirement: [[3, "1-3"]], effect: "Deal 7 dmg" },
+                    { requirement: [[4, "1-3"]], effect: "Deal 11 dmg + Ignore 1 Shield" },
                 ],
             },
             {
                 name: "Hunter Specials",
                 levels: [
-                    { requirement: [[3, "1-3"], [1, "6"]], effect: "Deal 5 dmg + Stun" },
-                    { requirement: [[4, "1-3"], [1, "6"]], effect: "Deal 9 dmg + Burn" },
+                    { requirement: [[2, "1-3"], [1, "6"]], effect: "Deal 5 dmg + Stun" },
+                    { requirement: [[3, "1-3"], [1, "6"]], effect: "Deal 9 dmg + Burn + Blind" },
                 ],
             },
             {
@@ -219,7 +219,7 @@ export const characters: Character[] = [
                 levels: [
                     { requirement: [[2, "4-5"]], effect: "Block 2 dmg" },
                     { requirement: [[3, "4-5"]], effect: "+2 dmg next attack" },
-                    { requirement: [[5, "4-5"]], effect: "Heal 6 HP + Stun enemy" },
+                    { requirement: [[4, "4-5"]], effect: "Heal 6 HP + Evasive" },
                 ],
             },
         ],
@@ -227,10 +227,10 @@ export const characters: Character[] = [
         cpEffects: [
             { name: "Precision Shot", cost: 1, effect: "Set 1 die to chosen value" },
             { name: "Quick Reroll", cost: 1, effect: "Reroll 1 die" },
-            { name: "Evasion", cost: 2, effect: "Gain 2 Shields or block 2 dmg" },
+            { name: "Evasion", cost: 2, effect: "Gain Evasive (ignore next attack if you roll 5–6)" },
             { name: "Deadeye", cost: 2, effect: "Ignore 1 enemy Shield" },
-            { name: "Rain of Arrows", cost: 3, effect: "Double next attack or apply Burn + Stun" },
+            { name: "Rain of Arrows", cost: 3, effect: "Double next attack or apply Burn + Blind" },
         ],
-        passive: "Hunter’s Instinct: At the start of your turn, roll a dice, on 5-6, remove a negative effect",
+        passive: "Hunter’s Instinct: At the start of your turn, roll a die, on 5-6, remove a negative effect",
     },
 ];
