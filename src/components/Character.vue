@@ -57,11 +57,11 @@
 
         <div class="flex gap-4 w-full">
 
-            <div class="w-1/2 flex flex-col h-full">
-                <div class="p-2 text-2xl font-bold text-center">
+            <div class="w-1/2 flex flex-col h-full gap-2">
+                <!-- <div class="p-2 text-2xl font-bold text-center">
                     Abilities
-                </div>
-                <div class="rounded-lg p-2 flex flex-col gap-2 my-1" v-for="a in character.abilities"
+                </div> -->
+                <div class="rounded-lg p-2 flex flex-col gap-2" v-for="a in character.abilities"
                     :style="{ backgroundColor: character.color, color: 'white' }">
                     <div class="text-xl font-mono font-bold flex justify-between">
                         <div>
@@ -77,26 +77,38 @@
                 </div>
             </div>
 
-            <div class="w-1/2 flex flex-col h-full">
-                <div class="p-2 text-2xl font-bold text-center">
+            <div class="w-1/2 flex flex-col h-full gap-2">
+                <!-- <div class="p-2 text-2xl font-bold text-center">
                     Skills
-                </div>
-                <div v-for="skill in cPEffects" class="rounded-lg p-2 flex flex-col gap-2 border-2 my-1"
+                </div> -->
+                <div v-for="skill in cPEffects" class="rounded-lg p-2 flex gap-2 border-2 justify-between"
                     :style="{ borderColor: character.color, color: character.color }">
-                    <div class="flex justify-between w-full">
-                        <div class="flex flex-col">
-                            <div class="text-lg font-bold">
-                                {{ skill.effect.split(": ")[0] }}
-                            </div>
-                            <div class="pr-8">
-                                {{ skill.effect }}
-                            </div>
+                    <div class="flex flex-col">
+                        <div class="text-lg font-bold">
+                            {{ skill.effect.split(": ")[0] }}
                         </div>
-
-                        <div
-                            class="border-2 border-white p-2 rounded-full aspect-square text-xl size-10 flex justify-center items-center">
-                            {{ skill.cost }}
+                        <div class="pr-8">
+                            {{ skill.effect }}
                         </div>
+                    </div>
+                    <div class="p-2 rounded-full aspect-square text-xl size-10 flex justify-center items-center"
+                        :style="{ backgroundColor: character.color, color: 'white' }">
+                        {{ skill.cost }}
+                    </div>
+                </div>
+                <div class="rounded-lg p-2 flex justify-between gap-2 border-2"
+                    :style="{ borderColor: character.color, color: character.color }">
+                    <div class="flex flex-col">
+                        <div class="text-lg font-bold">
+                            {{ character.customCP.split(": ")[0] }}
+                        </div>
+                        <div class="pr-8">
+                            {{ character.customCP.split(": ")[1] }}
+                        </div>
+                    </div>
+                    <div class="p-2 rounded-full aspect-square text-xl size-10 flex justify-center items-center"
+                        :style="{ backgroundColor: character.color, color: 'white' }">
+                        1
                     </div>
                 </div>
             </div>
@@ -110,7 +122,7 @@
 
 <script lang="ts" setup>
 import { cPEffects, type Character, statusEffects } from "../characters";
-import Dice from "./Dice.vue";
+// import Dice from "./Dice.vue";
 import Box from "./Box.vue";
 
 defineProps<{
