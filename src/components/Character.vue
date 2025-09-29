@@ -21,11 +21,11 @@
                     <div class="text-lg" :style="{ color: character.color }">
                         Status effects:
                     </div>
-                    <div class="w-full h-full grid grid-cols-2 grid-rows-2 gap-2">
-                        <div v-for="s in statusEffect" class="flex items-center gap-2" :key="s">
+                    <div class="w-full h-full grid grid-cols-3 grid-rows-2 gap-1">
+                        <div v-for="(_key, value) in statusEffects" class="flex items-center gap-1">
                             <Box />
                             <div :style="{ color: character.color }">
-                                {{ s }}
+                                {{ value }}
                             </div>
                         </div>
                     </div>
@@ -109,7 +109,7 @@
 
 
 <script lang="ts" setup>
-import { cPEffects, type Character, statusEffect } from "../characters";
+import { cPEffects, type Character, statusEffects } from "../characters";
 import Dice from "./Dice.vue";
 import Box from "./Box.vue";
 

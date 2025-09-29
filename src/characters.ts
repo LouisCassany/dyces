@@ -1,4 +1,13 @@
-export const statusEffect = ["Shield", "Poison", "Burn", "Stun"];
+
+export const statusEffects = {
+    Burn: "At the start of your turn, take 2 damage.",
+    Stun: "You can only reroll 2 dices.",
+    Blind: "You deal 3 less damage.",
+    Freeze: "During your next offensive roll phase, you may reroll only once instead of twice.",
+    Poison: "At the start of your turn, lose 1 CP.",
+    Shield: "Reduce incoming damage by 3.",
+    Evasive: "When attacked, roll 1 die. On 5–6, avoid all damage.",
+};
 
 export type Character = {
     name: string;
